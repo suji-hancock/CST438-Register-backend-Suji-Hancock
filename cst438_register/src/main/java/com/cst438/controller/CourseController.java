@@ -18,7 +18,7 @@ public class CourseController {
 	EnrollmentRepository enrollmentRepository;
 	
 	/*
-	 * endpoint used by gradebook service to transfer final course grades
+	 * end point used by grade book service to transfer final course grades
 	 */
 	@PutMapping("/course/{course_id}")
 	@Transactional
