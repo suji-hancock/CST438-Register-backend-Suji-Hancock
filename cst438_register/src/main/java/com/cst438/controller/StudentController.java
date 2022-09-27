@@ -56,13 +56,4 @@ public class StudentController {
 			studentRepository.save(updateStudent);
 		}
 	}	
-	
-//	@PostMapping("/student/{id}")
-//	public void updateStatus(@PathVariable("id") int studentId, @RequestParam("status") int status) {
-//			Student studentStatus = StudentRepository.findById(studentId);
-//			studentStatus.setStatusCode(status);
-//			StudentRepository.save(studentStatus);
-//			
-//			return;
-//	}
 }

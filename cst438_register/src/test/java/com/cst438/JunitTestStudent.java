@@ -76,7 +76,6 @@ public class JunitTestStudent {
 				.andReturn().getResponse();
 		
 		assertEquals(200, response.getStatus());
-		//verify(studentRepository).post(any(Student.class));
 	}
 
 	@Test
@@ -100,7 +99,6 @@ public class JunitTestStudent {
 				.andReturn().getResponse();
 		
 		assertEquals(200, response.getStatus());
-		//verify(studentRepository).put(any(Student.class));
 	}
 	
 	private static String asJsonString(final Object obj) {
