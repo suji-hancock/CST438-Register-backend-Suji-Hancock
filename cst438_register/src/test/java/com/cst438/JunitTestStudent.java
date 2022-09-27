@@ -38,12 +38,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.test.context.ContextConfiguration;
 
-
 @ContextConfiguration(classes = { StudentController.class })
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest
 public class JunitTestStudent {
-	
 	static final String URL = "http://localhost:8080/student";
 	public static final String TEST_STUDENT_EMAIL = "test@csumb.edu";
 	public static final String TEST_STUDENT_NAME  = "test";
@@ -76,7 +74,6 @@ public class JunitTestStudent {
 				.andReturn().getResponse();
 		
 		assertEquals(200, response.getStatus());
-		//verify(studentRepository).post(any(Student.class));
 	}
 
 	@Test
@@ -100,7 +97,6 @@ public class JunitTestStudent {
 				.andReturn().getResponse();
 		
 		assertEquals(200, response.getStatus());
-		//verify(studentRepository).put(any(Student.class));
 	}
 	
 	private static String asJsonString(final Object obj) {

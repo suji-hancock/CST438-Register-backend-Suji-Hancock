@@ -26,7 +26,7 @@ public class StudentController {
 	
 	@PostMapping("/student")
 	public StudentDTO addStudent(@RequestBody StudentDTO s) {
-		Student addStudent = studentRepository.findByEmail(s.email); // looking up in the database
+		Student addStudent = studentRepository.findByEmail(s.email);
 		// if the student isn't in there, we create the student
 		if(addStudent == null) {
 			addStudent = new Student();
@@ -42,12 +42,12 @@ public class StudentController {
 	
 
 	
-	@PutMapping("/student") // put is updating
+	@PutMapping("/student") // put is updating whether it's hold/no hold
 	public void updateStudent(@RequestBody StudentDTO s) {
 		Student updateStudent = studentRepository.findByEmail(s.email);
+		// Another way to find the student
 		//Student student = studentRepository.findById(s.student_id).orElse(null);
 		//Optional<Student> t = studentRepository.findById(s.student_id);
-		
 		if (updateStudent == null) {
 			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Student does not exist. Cannot update" );
 		} else {
@@ -56,13 +56,4 @@ public class StudentController {
 			studentRepository.save(updateStudent);
 		}
 	}	
-	
-//	@PostMapping("/student/{id}")
-//	public void updateStatus(@PathVariable("id") int studentId, @RequestParam("status") int status) {
-//			Student studentStatus = StudentRepository.findById(studentId);
-//			studentStatus.setStatusCode(status);
-//			StudentRepository.save(studentStatus);
-//			
-//			return;
-//	}
 }
