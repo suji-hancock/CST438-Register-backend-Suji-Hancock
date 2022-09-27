@@ -38,7 +38,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.test.context.ContextConfiguration;
 
-
 @ContextConfiguration(classes = { StudentController.class })
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest

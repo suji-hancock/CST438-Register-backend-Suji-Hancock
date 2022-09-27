@@ -45,9 +45,9 @@ public class StudentController {
 	@PutMapping("/student") // put is updating
 	public void updateStudent(@RequestBody StudentDTO s) {
 		Student updateStudent = studentRepository.findByEmail(s.email);
+		// Another way to find the student
 		//Student student = studentRepository.findById(s.student_id).orElse(null);
 		//Optional<Student> t = studentRepository.findById(s.student_id);
-		
 		if (updateStudent == null) {
 			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Student does not exist. Cannot update" );
 		} else {
