@@ -42,7 +42,6 @@ import org.springframework.test.context.ContextConfiguration;
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest
 public class JunitTestStudent {
-	
 	static final String URL = "http://localhost:8080/student";
 	public static final String TEST_STUDENT_EMAIL = "test@csumb.edu";
 	public static final String TEST_STUDENT_NAME  = "test";

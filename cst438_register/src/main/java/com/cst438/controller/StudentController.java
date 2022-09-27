@@ -26,7 +26,7 @@ public class StudentController {
 	
 	@PostMapping("/student")
 	public StudentDTO addStudent(@RequestBody StudentDTO s) {
-		Student addStudent = studentRepository.findByEmail(s.email); // looking up in the database by student email
+		Student addStudent = studentRepository.findByEmail(s.email);
 		// if the student isn't in there, we create the student
 		if(addStudent == null) {
 			addStudent = new Student();
