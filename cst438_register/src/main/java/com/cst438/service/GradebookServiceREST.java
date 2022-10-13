@@ -17,11 +17,19 @@ public class GradebookServiceREST extends GradebookService {
 		System.out.println("REST grade book service");
 	}
 
+	/* When registration services sends a message to great book service, it will call this function
+	 * When a student does an enrollment, enrollStudent() will be called
+	*/
 	@Override
 	public void enrollStudent(String student_email, String student_name, int course_id) {
+		EnrollmentDTO enrollment = new EnrollmentDTO();
+		enrollment.course_id = course_id;
+		enrollment.studentEmail = student_email;
+		enrollment.studentName = student_name;
 		
-		//TODO  complete this method in homework 4
-		
+		System.out.println("Post to gradebook " + enrollment);
+		EnrollmentDTO response = restTemplate.postForObject(gradebook_url+"/enrollment", enrollment, EnrollmentDTO.class);
+		System.out.println("Response from gradebook "+response);
 	}
 
 }
